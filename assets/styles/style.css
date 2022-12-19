@@ -1,11 +1,13 @@
 * {
   box-sizing: border-box;
   font-family: Gotham Rounded, sans-serif;
+
   /* so that when you added any padding or margin to an elemt, it doesn't affect the width of it */
 }
 
 body {
   margin: 0;
+
   /* background: linear-gradient(to left, #00AAff, #00FF6c); */
 }
 
@@ -33,22 +35,27 @@ body {
   border-radius: 20px 0;
 }
 
-.ans .show-ans {
+.ans .show-working {
+  background-color: #555;
+  color: #fff;
   border: none;
-  color: black;
-  width: 100%;
-  min-height: 3cm;
   height: fit-content;
-  font-size: 2cm;
+  min-height: 3cm;
   text-align: end;
-  word-wrap: break-word;
+  font-size: 2cm;
+  word-break: break-all;
 }
 
-.ans .show-working {
-  /* background-color: #fff; */
+.ans .show-ans {
+  background-color: green;
   border: none;
-  min-height: 3cm;
-  height: auto;
+  color: #fff;
+  width: 100%;
+  height: fit-content;
+  min-height: 1.7cm;
+  font-size: 1.4cm;
+  text-align: end;
+  word-wrap: break-word;
 }
 
 .section2 {
