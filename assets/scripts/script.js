@@ -1,51 +1,41 @@
-class Calculator {
-  constructor(showWorking, showAns) {
-    this.showAns = showAns
-    this.showWorking = showWorking
-    this.clear()
+const numberButtons = document.querySelectorAll("[data-number");
+console.log(numberButtons);
+
+const operatorButtons = document.querySelectorAll("[data-operator]");
+const equalButtons = document.querySelector("[data-equals]");
+
+const backBtn = document.querySelector("[data-back]");
+const acButton = document.querySelector("[data-ac]");
+const showAns = document.querySelector("[data-show-ans]");
+const showWorking = document.querySelector("[data-show-working]");
+
+document.write("hello");
+
+numberButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (+showWorking.innerHTML === 0) {
+      showWorking.innerHTML = button.id;
+      return;
+    }
+
+    showWorking.append(button.id);
+    if (button.id === ".") button.disabled = true;
+  });
+});
+
+acButton.addEventListener("click", () => {
+  showWorking.innerHTML = 0;
+  document.getElementById(".").disabled = false;
+});
+
+backBtn.addEventListener("click", () => {
+  let text = showWorking.innerHTML;
+  text = text.slice(0, text.length - 1);
+  if (!/\d/.test(+[...text].pop())) {
+    document.getElementById(".").disabled = false;
+    text = text.slice(0, text.length - 1);
   }
 
-  clear() {
-    this.currentOperand = ''
-    this.previousOperand = ''
-    this.operation = undefined
-  }
-
-  delete() {
-  }
-
-  appendNumber(number) {
-    this.currentOperand += number.
-  }
-
-  chooseOperation(operation) {
-  }
-
-  compute() {
-
-  }
-
-  updateDisplay() {
-    this.showWorking.innerText = this.currentOperand
-  }
-}
-
-
-const numberButtons = document.querySelectorAll('[data-number')
-console.log(numberButtons)
-
-const operatorButtons = document.querySelectorAll('[data-operator]')
-const equalButtons = document.querySelector('[data-equals]')
-const acButtons = document.querySelector('[data-ac]')
-const showAns = document.querySelector('[data-show-ans]')
-const showWorking = document.querySelector('[data-show-working]')
-document.write('hello')
-
-const calculator = new Calculator(showWorking, showAns)
-
-numberButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    calculator.appendNumber(button.innerText)
-    calculator.updateDisplay()
-  })
-})
+  showWorking.innerHTML = text || 0;
+  // console.log(JSON.parse(showWorking.innerHTML), text);
+});

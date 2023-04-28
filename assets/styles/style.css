@@ -35,8 +35,8 @@ body {
   border-radius: 20px 0;
 }
 
-.ans .show-working {
-  background-color: #555;
+.ans .show-ans {
+  background-color: #000;
   color: #fff;
   border: none;
   height: fit-content;
@@ -46,13 +46,14 @@ body {
   word-break: break-all;
 }
 
-.ans .show-ans {
-  background-color: green;
+.ans .show-working {
+  background-color: #555;
   border: none;
+  padding: 5px;
   color: #fff;
   width: 100%;
   height: fit-content;
-  min-height: 1.7cm;
+  height: 87px;
   font-size: 1.4cm;
   text-align: end;
   word-wrap: break-word;
@@ -136,7 +137,7 @@ button {
   padding-left: 15%;
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 400px) {
   .whole {
     width: 98vw;
   }
