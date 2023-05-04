@@ -15,7 +15,7 @@ const evaluate = (firstVal, currentVal, operator) => {
       resHolder.answer = firstVal / currentVal;
       break;
     default:
-        console.log('evaluate ended')
+      console.log("evaluate ended");
       break;
   }
   showAns.innerHTML = resHolder.answer;
