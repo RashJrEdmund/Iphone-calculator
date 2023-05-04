@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/styles/style.css" />
     <title>Calculator</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="whole">
-        <div class="ans">
-            <div class="show-ans" data-show-ans></div>
-            <div class="show-working" data-show-working>0</div>
-        </div>
-        <div class="section2">
-            <div class="sub-section1">
-                <button class="row-operators back" type="reset" data-back>&lt;</button>
-                <button class="row-operators ac" type="reset" data-ac>AC</button>
-                <button class="row-operators" data-operator id="%">%</button>
-                <button class="column-operators" data-operator id="/">/</button>
+      <div class="ans">
+        <div class="show-ans" data-show-ans></div>
+        <div class="show-working" data-show-working>0</div>
+      </div>
+      <div class="section2">
+        <div class="sub-section1">
+          <button class="row-operators back" type="reset" data-back>
+            &lt;
+          </button>
+          <button class="row-operators ac" type="reset" data-ac>AC</button>
+          <button class="row-operators" data-operator id="%">%</button>
+          <button class="column-operators" data-operator id="/">/</button>
 
-                <button class="btn" data-number id="7">7</button>
-                <button class="btn" data-number id="8">8</button>
-                <button class="btn" data-number id="9">9</button>
-                <button class="column-operators" data-operator id="*">*</button>
-                <button class="btn" data-number id="4">4</button>
-                <button class="btn" data-number id="5">5</button>
-                <button class="btn" data-number id="6">6</button>
-                <button class="column-operators" data-operator id="-">-</button>
-                <button class="btn" data-number id="1">1</button>
-                <button class="btn" data-number id="2">2</button>
-                <button class="btn" data-number id="3">3</button>
-                <button class="column-operators" data-operator id="+">+</button>
-            </div>
-            <div class="sub-section2">
-                <button class="zero" data-number id="0">0</button>
-                <button class="btn" data-number id=".">.</button>
-                <button class="column-operators" data-equals id="=">=</button>
-            </div>
+          <button class="btn" data-number id="7">7</button>
+          <button class="btn" data-number id="8">8</button>
+          <button class="btn" data-number id="9">9</button>
+          <button class="column-operators" data-operator id="*">*</button>
+          <button class="btn" data-number id="4">4</button>
+          <button class="btn" data-number id="5">5</button>
+          <button class="btn" data-number id="6">6</button>
+          <button class="column-operators" data-operator id="-">-</button>
+          <button class="btn" data-number id="1">1</button>
+          <button class="btn" data-number id="2">2</button>
+          <button class="btn" data-number id="3">3</button>
+          <button class="column-operators" data-operator id="+">+</button>
         </div>
+        <div class="sub-section2">
+          <button class="zero" data-number id="0">0</button>
+          <button class="btn" data-number id=".">.</button>
+          <button class="column-operators" data-equals id="=">=</button>
+        </div>
+      </div>
     </div>
 
     <script src="assets/scripts/script.js" type="module"></script>
-</body>
+  </body>
 </html>

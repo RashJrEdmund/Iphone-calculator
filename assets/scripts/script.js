@@ -7,6 +7,8 @@ const acButton = document.querySelector("[data-ac]");
 const showAns = document.querySelector("[data-show-ans]");
 const showWorking = document.querySelector("[data-show-working]");
 
+let results = 0;
+
 acButton.addEventListener("click", () => {
   showWorking.innerHTML = 0;
   document.getElementById(".").disabled = false;
@@ -28,7 +30,6 @@ backBtn.addEventListener("click", () => {
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
     if (+showWorking.innerHTML === 0 && showWorking.innerHTML.length <= 1) {
-      console.log("inner check entered", showWorking.innerHTML.length);
       if (button.id === ".") {
         showWorking.innerHTML = "0" + button.id;
         button.disabled = true;
@@ -44,14 +45,31 @@ numberButtons.forEach((button) => {
   });
 });
 
+const mathOperations = (btn, currentVal) => {
+  switch (btn) {
+    case "+":
+      results += currentVal;
+      break;
+    case "-":
+      results -= currentVal;
+      break;
+    case "*":
+      results *= currentVal;
+      break;
+    case "/":
+      results /= currentVal;
+      break;
+    default:
+      break;
+  }
+  showAns.innerHTML = results;
+};
+
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    if (+showWorking.innerHTML === 0) {
-      showWorking.innerHTML = button.id;
-      return;
-    }
+    if (showWorking.innerHTML.length <= 0) return;
 
-    showWorking.append(button.id);
-    if (button.id === ".") button.disabled = true;
+    mathOperations(button.id, +showWorking.innerHTML);
+    showWorking.innerHTML = 0;
   });
 });
