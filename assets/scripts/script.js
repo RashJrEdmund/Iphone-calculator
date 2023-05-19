@@ -1,4 +1,4 @@
-// import evaluate from "./service";
+import evaluate from "./service";
 
 const numberButtons = document.querySelectorAll("[data-number");
 const operatorButtons = document.querySelectorAll("[data-operator]");
@@ -9,7 +9,7 @@ const acButton = document.querySelector("[data-ac]");
 const showAns = document.querySelector("[data-show-ans]");
 const showWorking = document.querySelector("[data-show-working]");
 
-export const resHolder = {
+const resHolder = {
   answer: null,
   currOperator: "",
 };
@@ -71,28 +71,28 @@ numberButtons.forEach((button) => {
   });
 });
 
-const evaluate = (firstVal, currentVal, operator) => {
-  switch (operator) {
-    case "+":
-      resHolder.answer = firstVal + currentVal;
-      break;
-    case "-":
-      resHolder.answer = firstVal - currentVal;
-      break;
-    case "*":
-      resHolder.answer = firstVal * currentVal;
-      break;
-    case "/":
-      resHolder.answer = firstVal / currentVal;
-      break;
-    default:
-      break;
-  }
+// const evaluate = (firstVal, currentVal, operator) => {
+//   switch (operator) {
+//     case "+":
+//       resHolder.answer = firstVal + currentVal;
+//       break;
+//     case "-":
+//       resHolder.answer = firstVal - currentVal;
+//       break;
+//     case "*":
+//       resHolder.answer = firstVal * currentVal;
+//       break;
+//     case "/":
+//       resHolder.answer = firstVal / currentVal;
+//       break;
+//     default:
+//       break;
+//   }
 
-  showAns.innerHTML = Math.round(resHolder.answer) !== resHolder.answer
-    ? resHolder.answer.toFixed(3)
-    : resHolder.answer;
-};
+//   showAns.innerHTML = Math.round(resHolder.answer) !== resHolder.answer
+//     ? resHolder.answer.toFixed(3)
+//     : resHolder.answer;
+// };
 
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => {
