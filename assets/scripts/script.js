@@ -21,6 +21,8 @@ const blinkShowWorking = () => {
   }, 50);
 };
 
+equalsBtn.addEventListener('click', blinkShowWorking)
+
 acButton.addEventListener("click", () => {
   showWorking.innerHTML = 0;
   showAns.innerHTML = 0;
@@ -67,8 +69,6 @@ numberButtons.forEach((button) => {
     if (resHolder.currOperator) {
       console.log('operator found', resHolder.currOperator)
       const vals = showWorking.textContent.split(resHolder.currOperator);
-      
-      if (isNaN(+vals[0])) return console.log('an error', vals)
     
       evaluate(+vals[0], +vals[1] || 0, resHolder.currOperator);
     }

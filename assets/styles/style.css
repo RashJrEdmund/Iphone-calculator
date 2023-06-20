@@ -7,6 +7,10 @@
   /* so that when you added any padding or margin to an elemt, it doesn't affect the width of it */
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   background-color: #1d2432;
   margin: 0;
