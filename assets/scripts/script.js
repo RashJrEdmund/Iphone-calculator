@@ -1,4 +1,4 @@
-import evaluate from "./service";
+import evaluate from "./service.js";
 
 const numberButtons = document.querySelectorAll("[data-number");
 const operatorButtons = document.querySelectorAll("[data-operator]");
@@ -9,7 +9,7 @@ const acButton = document.querySelector("[data-ac]");
 const showAns = document.querySelector("[data-show-ans]");
 const showWorking = document.querySelector("[data-show-working]");
 
-const resHolder = {
+export const resHolder = {
   answer: null,
   currOperator: "",
 };
@@ -57,7 +57,7 @@ numberButtons.forEach((button) => {
         return;
       }
 
-      showWorking.innerHTML = button.id;
+      showWorking.innerHTML = +button.id;
       return;
     }
 
@@ -65,34 +65,15 @@ numberButtons.forEach((button) => {
     if (button.id === ".") button.disabled = true;
 
     if (resHolder.currOperator) {
+      console.log('operator found', resHolder.currOperator)
       const vals = showWorking.textContent.split(resHolder.currOperator);
+      
+      if (isNaN(+vals[0])) return console.log('an error', vals)
+    
       evaluate(+vals[0], +vals[1] || 0, resHolder.currOperator);
     }
   });
 });
-
-// const evaluate = (firstVal, currentVal, operator) => {
-//   switch (operator) {
-//     case "+":
-//       resHolder.answer = firstVal + currentVal;
-//       break;
-//     case "-":
-//       resHolder.answer = firstVal - currentVal;
-//       break;
-//     case "*":
-//       resHolder.answer = firstVal * currentVal;
-//       break;
-//     case "/":
-//       resHolder.answer = firstVal / currentVal;
-//       break;
-//     default:
-//       break;
-//   }
-
-//   showAns.innerHTML = Math.round(resHolder.answer) !== resHolder.answer
-//     ? resHolder.answer.toFixed(3)
-//     : resHolder.answer;
-// };
 
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -108,7 +89,5 @@ operatorButtons.forEach((button) => {
 
     blinkShowWorking();
     document.getElementById(".").disabled = false;
-
-    // if (resHolder.answer) showWorking.innerHTML = "";
   });
 });
