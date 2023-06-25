@@ -4,7 +4,7 @@
 ![home page](assets/images/overview.png)
 
 ## About
-This project was a simple assignment given to test our still growing skills. it's about implementing and briging to life an iphone calculator. I decided to style mine perculiarly
+This is a simple calculator, built to look like an iphone-calculator
 
 ## BUILT WITH
 This page is basically built with just
