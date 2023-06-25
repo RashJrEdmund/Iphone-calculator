@@ -16,7 +16,7 @@ export const resHolder = {
   currOperator: ''
 }
 
-// const operators = ['+', '-', '*', '÷', '%']
+// const operators = ['+', '-', '*', '÷', '%'] // this to keep track of operators
 
 const blinkShowWorking = () => {
   showWorking.style.backgroundColor = 'gold'
