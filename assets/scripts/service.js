@@ -2,7 +2,6 @@ import { resHolder } from './script.js'
 const showAns = document.querySelector('[data-show-ans]')
 
 const evaluate = (firstVal, currentVal, operator) => {
-  console.log(currentVal)
   switch (operator) {
     case '+':
       resHolder.answer = firstVal + currentVal
