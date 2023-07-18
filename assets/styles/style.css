@@ -14,7 +14,7 @@ body {
   align-items: center;
 }
 
-#page_container {
+#page-container {
   display: flex;
   flex-direction: column;
   box-shadow: 6px 7px 10px #4e4d4d;
@@ -45,15 +45,15 @@ body {
   margin-right: 5px;
 }
 
-.current_operand span {
+.current-operand span {
   font-size: 32px;
 }
 
-.previous_operand span {
+.previous-operand span {
   display: none;
 }
 
-.calc_button_rows_container {
+.calc-button-rows-container {
   display: flex;
   flex-direction: column;
   width: 200px;
@@ -108,7 +108,7 @@ button:focus {
   font-size: 22px;
 }
 
-#number_0 {
+#number-0 {
   width: 89px;
   border-radius: 100px;
   font-size: 22px;
