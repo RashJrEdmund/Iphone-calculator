@@ -1,53 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="assets/styles/style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/style.css">
     <title>Calculator</title>
-  </head>
-  <body>
-    <div class="whole">
-      <div class="ans">
-        <p class="show-ans" data-show-ans></p>
-        <p class="show-working" data-show-working>0</p>
-      </div>
-      <hr>
-      <div class="section2">
-        <div class="sub-section1">
-            <button class="row-operators back" type="reset" data-back>
-              &lt;
-            </button>
-            <button class="row-operators ac" type="reset" data-ac>AC</button>
-            <button class="row-operators" data-operator id="%">%</button>
-            <button class="column-operators" data-operator id="÷">÷</button>
-  
-            <button class="btn" data-number id="7">7</button>
-            <button class="btn" data-number id="8">8</button>
-            <button class="btn" data-number id="9">9</button>
-            <button class="column-operators" data-operator id="*">*</button>
-            <button class="btn" data-number id="4">4</button>
-            <button class="btn" data-number id="5">5</button>
-            <button class="btn" data-number id="6">6</button>
-            <button class="column-operators" data-operator id="-">-</button>
-            <button class="btn" data-number id="1">1</button>
-            <button class="btn" data-number id="2">2</button>
-            <button class="btn" data-number id="3">3</button>
-            <button class="column-operators" data-operator id="+">+</button>
+</head>
+<body>
+    
+    <div id="page_container">
+        <div class="display">
+          <div class="previous_operand"  id="previous_operand">
+            <span></span>
+          </div>
+          <div class="current_operand" id="current_operand"><span></span></div>
         </div>
-        <div class="sub-section2">
-            <button class="zero" data-number id="0">0</button>
-            <button class="btn" data-number id=".">.</button>
-            <button class="column-operators" data-equals id="=">=</button>
+    
+          <div class="calc_button_rows_container">
+            <div class="row">
+              <button class="light-grey" id="AC">AC</button>
+              <button class="light-grey" id="plus_or_minus">+/-</button>
+              <button class="operations" id="percentage">%</button>
+              <button class="operations" id="division">÷</button>
+            </div>
+            <div class="row">
+              <button class="number_btn" id="number7">7</button>
+              <button class="number_btn" id="number8">8</button>
+              <button class="number_btn" id="number9">9</button>
+              <button class="operations" id="times">x</button>
+            </div>
+            <div class="row">
+              <button class="number_btn" id="number4">4</button>
+              <button class="number_btn" id="number5">5</button>
+              <button class="number_btn" id="number6">6</button>
+              <button class="operations" id="minus">-</button>
+            </div>
+            <div class="row">
+              <button class="number_btn" id="number1">1</button>
+              <button class="number_btn" id="number2">2</button>
+              <button class="number_btn" id="number3">3</button>
+              <button class="operations" id="plus">+</button>
+            </div>
+            <div class="row">
+              <button class="number_btn" id="number_0">0</button>
+              <button class="number_btn" id="number_dot">.</button>
+              <button class="equals" id="equals">=</button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </body>
+    
 
-  <script src="assets/scripts/script.js" type="module" defer></script>
+    </div>
+    
+    <script src="assets/script/script.js"></script>
+</body>
 </html>
