@@ -1,5 +1,5 @@
 const numberBtn = document.querySelectorAll('.number-btn')
-const AC = document.getElementById('AC')
+const AC = document.getElementById('ac')
 const plusOrMinus = document.getElementById('plus-or-minus')
 // const percentage = document.getElementById('percentage')
 const operationBtn = document.querySelectorAll('.operations')
