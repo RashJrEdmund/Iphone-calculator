@@ -64,7 +64,7 @@ function calculate () {
       result = a / b
       break
     case 'percentage':
-      result = a * (b / 100)
+      result = (a / 100) * b
       break
   }
   currentOperand.textContent = result
