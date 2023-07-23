@@ -76,7 +76,11 @@ numberButtons.forEach((button) => {
 
     if (resHolder.currOperator) {
       console.log('operator found', resHolder.currOperator)
-      const vals = showWorking.textContent.split(resHolder.currOperator)
+      const regex = /\d[-+/*]/; // exmaple: to match "3-" in "-3-40"
+      const match = showWorking.textContent.match(regex)[0];
+      const vals = showWorking.textContent.split(match)
+      vals[0] += match.slice(0, -1);
+      const operator = match.slice(-1);
 
       evaluate(+vals[0], +vals[1] || 0, resHolder.currOperator)
     }
