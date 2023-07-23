@@ -10,7 +10,7 @@ const showAns = document.querySelector('[data-show-ans]')
 const showWorking = document.querySelector('[data-show-working]')
 
 export const resHolder = {
-  answer: null,
+  answer: 0,
   firstValue: '',
   secondValue: '',
   currOperator: ''
@@ -76,11 +76,11 @@ numberButtons.forEach((button) => {
 
     if (resHolder.currOperator) {
       console.log('operator found', resHolder.currOperator)
-      const regex = /\d[-+/*]/; // exmaple: to match "3-" in "-3-40"
-      const match = showWorking.textContent.match(regex)[0];
+      const regex = /\d[-+÷x%]/; // exmaple: to match "3-" in "-3-40"
+      const match = showWorking.textContent.match(regex)[0] || "";
       const vals = showWorking.textContent.split(match)
       vals[0] += match.slice(0, -1);
-      const operator = match.slice(-1);
+      // const operator = match.slice(-1);
 
       evaluate(+vals[0], +vals[1] || 0, resHolder.currOperator)
     }
@@ -91,11 +91,14 @@ operatorButtons.forEach((button) => {
   button.addEventListener('click', () => {
     if (showWorking.innerHTML.length <= 0) return
 
-    if (resHolder.answer && resHolder.currOperator) {
+    if (resHolder.answer.toString() && resHolder.currOperator) {
       showWorking.textContent = resHolder.answer
     }
 
-    showWorking.textContent += button.id
+    // if (resHolder.answer == 0) showWorking.textContent = 0
+
+    if (+showWorking.innerHTML === 0 ) showWorking.textContent = button.id
+    else showWorking.textContent += button.id
 
     resHolder.currOperator = button.id
 
