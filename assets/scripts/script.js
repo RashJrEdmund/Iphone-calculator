@@ -16,8 +16,6 @@ export const resHolder = {
   currOperator: ''
 }
 
-// const operators = ['+', '-', '*', '÷', '%'] // this to keep track of operators
-
 const blinkShowWorking = () => {
   showWorking.style.backgroundColor = 'gold'
   setTimeout(() => {
@@ -76,10 +74,10 @@ numberButtons.forEach((button) => {
 
     if (resHolder.currOperator) {
       console.log('operator found', resHolder.currOperator)
-      const regex = /\d[-+÷x%]/; // exmaple: to match "3-" in "-3-40"
-      const match = showWorking.textContent.match(regex)[0] || "";
+      const regex = /\d[-+÷x%]/ // exmaple: to match "3-" in "-3-40"
+      const match = showWorking.textContent.match(regex)[0]
       const vals = showWorking.textContent.split(match)
-      vals[0] += match.slice(0, -1);
+      vals[0] += match.slice(0, -1)
       // const operator = match.slice(-1);
 
       evaluate(+vals[0], +vals[1] || 0, resHolder.currOperator)
@@ -92,13 +90,12 @@ operatorButtons.forEach((button) => {
     if (showWorking.innerHTML.length <= 0) return
 
     if (resHolder.answer.toString() && resHolder.currOperator) {
+      // checking for ".toString()" bcs at some point resHolder.answer will be zero
+      // and will cause this condition to fail cause the truthiness of zero is false.
       showWorking.textContent = resHolder.answer
     }
 
-    // if (resHolder.answer == 0) showWorking.textContent = 0
-
-    if (+showWorking.innerHTML === 0 ) showWorking.textContent = button.id
-    else showWorking.textContent += button.id
+    showWorking.textContent += button.id
 
     resHolder.currOperator = button.id
 
