@@ -1,5 +1,3 @@
-import { resHolder } from './script.js'
-const showAns = document.querySelector('[data-show-ans]')
 
 const evaluate = (firstVal, currentVal, operator) => {
   switch (operator) {

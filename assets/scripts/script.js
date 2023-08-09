@@ -1,4 +1,3 @@
-import evaluate from './service.js'
 
 const numberButtons = document.querySelectorAll('[data-number')
 const operatorButtons = document.querySelectorAll('[data-operator]')
